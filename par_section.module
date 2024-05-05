@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Paragraph columns module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function par_section_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__paragraph_section' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__field_paragraph_extra_html' => [
+      'base hook' => 'field',
+    ],
+  ];
+}
