@@ -1,5 +1,5 @@
 {
-    "name": "nubay_services/par_section",
+    "name": "handmangroup/par_section",
     "description": "Creates a wrapper paragraph type paragraph sections",
     "type": "drupal-module",
     "authors": [
