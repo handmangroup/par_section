@@ -1,0 +1,9 @@
+section:
+  css:
+    theme:
+      css/par_section.css: { }
+  js:
+    js/par_section.js: { preprocess: false }
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

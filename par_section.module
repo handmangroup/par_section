@@ -7,6 +7,11 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 
+function par_accordion_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'par_section/section';
+}
+
+
 /**
  * Implements hook_theme().
  */
