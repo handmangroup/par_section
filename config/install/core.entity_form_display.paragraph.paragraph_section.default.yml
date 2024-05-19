@@ -1,22 +1,67 @@
-
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.paragraph_section.field_bootstrap_hints
     - field.field.paragraph.paragraph_section.field_paragraph_angled
     - field.field.paragraph.paragraph_section.field_paragraph_container
     - field.field.paragraph.paragraph_section.field_paragraph_content_align
-    - field.field.paragraph.paragraph_section.field_paragraph_section_ex_cls
     - field.field.paragraph.paragraph_section.field_paragraph_extra_html
     - field.field.paragraph.paragraph_section.field_paragraph_gutter_class
     - field.field.paragraph.paragraph_section.field_paragraph_id
     - field.field.paragraph.paragraph_section.field_paragraph_margin
     - field.field.paragraph.paragraph_section.field_paragraph_padding
+    - field.field.paragraph.paragraph_section.field_paragraph_section_ex_cls
     - field.field.paragraph.paragraph_section.field_paragraph_spacing
     - field.field.paragraph.paragraph_section.field_paragraph_switch_column
     - paragraphs.paragraphs_type.paragraph_section
   module:
+    - field_group
+    - markup
     - text
+third_party_settings:
+  field_group:
+    group_basic:
+      children:
+        - layout_paragraphs_fields
+        - field_paragraph_container
+      label: Layout
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_details:
+      children:
+        - field_paragraph_angled
+        - field_paragraph_content_align
+        - field_paragraph_switch_column
+        - field_bootstrap_hints
+        - field_paragraph_padding
+        - field_paragraph_margin
+        - field_paragraph_gutter_class
+        - field_paragraph_id
+        - field_paragraph_section_ex_cls
+        - field_paragraph_spacing
+        - field_paragraph_extra_html
+      label: 'Section Details'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
 _core:
   default_config_hash: sv-xQ1M8uXDyeUMGjl_BquKxZAsDEA51GQtNV0ElyyA
 id: paragraph.paragraph_section.default
@@ -24,36 +69,34 @@ targetEntityType: paragraph
 bundle: paragraph_section
 mode: default
 content:
+  field_bootstrap_hints:
+    type: markup
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_paragraph_angled:
     type: options_select
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_paragraph_container:
     type: boolean_checkbox
-    weight: 1
+    weight: 2
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_paragraph_content_align:
     type: options_select
-    weight: 5
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_paragraph_section_ex_cls:
-    type: string_textfield
-    weight: 3
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_paragraph_extra_html:
     type: text_textfield
-    weight: 11
+    weight: 21
     region: content
     settings:
       size: 60
@@ -61,15 +104,15 @@ content:
     third_party_settings: {  }
   field_paragraph_gutter_class:
     type: string_textfield
-    weight: 9
+    weight: 17
     region: content
     settings:
       size: 60
-      placeholder: ''
+      placeholder: '[.gy-*, .gx-*, .g-*] e.g. gx-5, gy-0'
     third_party_settings: {  }
   field_paragraph_id:
     type: string_textfield
-    weight: 6
+    weight: 18
     region: content
     settings:
       size: 60
@@ -77,15 +120,23 @@ content:
     third_party_settings: {  }
   field_paragraph_margin:
     type: string_textfield
-    weight: 8
+    weight: 16
     region: content
     settings:
       size: 60
-      placeholder: ''
+      placeholder: '{property}{sides}-{size} [m t,b,s,e,x,y 0-5] e.g. mt-5, mx-0'
     third_party_settings: {  }
   field_paragraph_padding:
     type: string_textfield
-    weight: 7
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: '{property}{sides}-{size} [p t,b,s,e,x,y 0-5] e.g. pt-5, px-0'
+    third_party_settings: {  }
+  field_paragraph_section_ex_cls:
+    type: string_textfield
+    weight: 19
     region: content
     settings:
       size: 60
@@ -93,19 +144,19 @@ content:
     third_party_settings: {  }
   field_paragraph_spacing:
     type: options_select
-    weight: 4
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   field_paragraph_switch_column:
     type: boolean_checkbox
-    weight: 2
+    weight: 13
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   layout_paragraphs_fields:
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
